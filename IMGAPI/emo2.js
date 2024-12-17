@@ -26,8 +26,6 @@ function initializeThemeToggle() {
         themeIcon.src = 'Sol.png';
         backgroundImage.classList.add('dark:bg-black', 'dark:bg-opacity-70');
         backgroundImage.style.backgroundImage = "url('FondoMain.jpg')";
-        document.querySelector('header').style.opacity = '0.8';
-        document.querySelector('footer').style.opacity = '0.8';
     };
 
     const setLightMode = () => {
@@ -40,8 +38,6 @@ function initializeThemeToggle() {
         themeIcon.src = 'Luna.png';
         backgroundImage.classList.remove('dark:bg-black', 'dark:bg-opacity-70');
         backgroundImage.style.backgroundImage = "url('Fondoluz.jpg')";
-        document.querySelector('header').style.opacity = '0.8';
-        document.querySelector('footer').style.opacity = '0.8';
     };
 
     themeToggle.addEventListener('click', () => {
@@ -54,9 +50,6 @@ function initializeThemeToggle() {
         }
     });
 
-    if (!localStorage.getItem('theme')) {
-        localStorage.setItem('theme', 'light');
-    }
     if (localStorage.getItem('theme') === 'dark') {
         setDarkMode();
     } else {
@@ -237,14 +230,6 @@ function animateBackgroundImage() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    if (!localStorage.getItem('theme')) {
-        localStorage.setItem('theme', 'light');
-    }
-    if (localStorage.getItem('theme') === 'dark') {
-        setDarkMode();
-    } else {
-        setLightMode();
-    }
     const urlParams = new URLSearchParams(window.location.search);
     const icon = urlParams.get('icon');
     const description = urlParams.get('description');
