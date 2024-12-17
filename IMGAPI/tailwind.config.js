@@ -1,5 +1,4 @@
 module.exports = {
-  // ...existing code...
   theme: {
     extend: {
       animation: {
@@ -18,5 +17,4 @@ module.exports = {
       },
     },
   },
-  // ...existing code...
 };

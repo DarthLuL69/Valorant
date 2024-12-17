@@ -13,8 +13,10 @@ function initializeThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const backgroundImage = document.getElementById('background-image');
+    const header = document.getElementById('header');
+    const footer = document.getElementById('footer');
 
-    if (!themeToggle || !themeIcon || !backgroundImage) return;
+    if (!themeToggle || !themeIcon || !backgroundImage || !header || !footer) return;
 
     const setDarkMode = () => {
         document.documentElement.classList.add('dark');
@@ -23,6 +25,8 @@ function initializeThemeToggle() {
         themeIcon.src = 'Sol.png';
         backgroundImage.classList.add('dark:bg-black', 'dark:bg-opacity-70');
         backgroundImage.style.backgroundImage = "url('FondoMain.jpg')";
+        header.classList.replace('bg-opacity-60', 'bg-opacity-80');
+        footer.classList.replace('bg-opacity-60', 'bg-opacity-80');
     };
 
     const setLightMode = () => {
@@ -32,6 +36,8 @@ function initializeThemeToggle() {
         themeIcon.src = 'Luna.png';
         backgroundImage.classList.remove('dark:bg-black', 'dark:bg-opacity-70');
         backgroundImage.style.backgroundImage = "url('FondoLuz.jpg')";
+        header.classList.replace('bg-opacity-80', 'bg-opacity-60');
+        footer.classList.replace('bg-opacity-80', 'bg-opacity-60');
     };
 
     themeToggle.addEventListener('click', () => {
