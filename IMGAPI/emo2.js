@@ -81,7 +81,7 @@ function cargarDatosValorant(endpoint, idContenedor, categoria) {
                 img.src = categoria === 'valorant' ? item.fullPortrait : item.displayIcon; 
                 img.alt = item.displayName;
                 img.className = 'w-full h-auto transform transition-transform duration-300 hover:scale-110';
-                img.loading = 'lazy'; // Lazy loading
+                img.loading = 'Fast'; //He puesto esto para que las imagenes se carguen mas rapido 
 
                 const name = document.createElement('p');
                 name.className = 'mt-2 text-center text-white';
