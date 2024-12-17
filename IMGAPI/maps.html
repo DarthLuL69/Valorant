@@ -7,15 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-800 text-gray-100 relative">
-    <div class="absolute inset-0 bg-cover bg-center bg-fixed filter blur-lg opacity-70" style="background-image: url('FondoMain.jpg'); z-index: -1;"></div>
-    <header id="header" class="bg-black bg-opacity-50 p-4 text-white fixed w-full top-0 z-10 transition duration-300 ease-in-out">
+<body class="bg-white text-black relative">
+    <div id="background-image" class="absolute inset-0 bg-cover bg-center bg-fixed filter blur-lg opacity-70" style="background-image: url('Fondoluz.jpg'); z-index: -1;"></div>
+    <header id="header" class="bg-white bg-opacity-80 p-4 text-black fixed w-full top-0 z-10 transition duration-300 ease-in-out dark:bg-black dark:bg-opacity-80 dark:text-white">
         <div class="container mx-auto flex justify-between items-center">
             <img src="API.png" alt="Valorant API" class="h-10 animate-bounce">
             <nav>
                 <ul class="flex space-x-4">
                     <li><a href="index.html" class="hover:underline">Main</a></li>
-                    <li><a href="individual.html" class="hover:underline">Individual</a></li>
                     <li><a href="maps.html" class="hover:underline">Mapas</a></li>
                 </ul>
             </nav>
@@ -24,25 +23,15 @@
             </button>
         </div>
     </header>
-    <div class="container mx-auto p-4 flex justify-center mt-20">
-        <div class="table-container w-full max-w-4xl bg-black bg-opacity-60 rounded-lg shadow-lg p-6">
-            <table class="min-w-full">
-                <thead>
-                    <tr class="bg-black bg-opacity-60">
-                        <th class="py-4 px-6">Mapa</th>
-                        <th class="py-4 px-6">Nombre del mapa</th>
-                    </tr>
-                </thead>
-                <tbody id="maps-valorant" class="emoji-row"></tbody>
-            </table>
-        </div>
+    <div class="container mx-auto p-4 mt-20">
+        <div id="maps-valorant" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center"></div>
     </div>
     <div class="emoji-display mt-4">
         <img id="maps-emoji" src="" alt="Mapa Seleccionado" class="hidden">
         <p id="maps-description" class="hidden"></p>
         <video id="maps-video" controls class="hidden"></video>
     </div>
-    <footer class="bg-black bg-opacity-50 text-gray-400 py-4 mt-8">
+    <footer class="bg-white bg-opacity-80 text-black py-4 mt-8 dark:bg-black dark:bg-opacity-80 dark:text-gray-400">
         <div class="container mx-auto text-center">
             <p>&copy; 2023 Valorant API. All rights reserved.</p>
             <p>Developed by Alexandro Suciu Peici</p>
@@ -52,11 +41,7 @@
     <script>
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('bg-opacity-80', 'shadow-md');
-            } else {
-                header.classList.remove('bg-opacity-80', 'shadow-md');
-            }
+            header.classList.toggle('bg-opacity-80 shadow-md', window.scrollY > 50);
         });
     </script>
 </body>
