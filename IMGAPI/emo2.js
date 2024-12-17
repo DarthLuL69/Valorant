@@ -18,11 +18,8 @@ function initializeThemeToggle() {
 
     const setDarkMode = () => {
         document.documentElement.classList.add('dark');
-        document.body.classList.replace('bg-white', 'bg-gray-800');
-        document.body.classList.replace('text-black', 'text-gray-100');
-        document.querySelectorAll('.bg-gray-900').forEach(el => el.classList.replace('bg-gray-900', 'bg-black'));
-        document.querySelectorAll('.bg-gray-800').forEach(el => el.classList.replace('bg-gray-800', 'bg-black'));
-        document.querySelectorAll('th, td').forEach(el => el.classList.replace('text-gray-800', 'text-gray-100'));
+        document.body.classList.replace('bg-white', 'bg-black');
+        document.body.classList.replace('text-black', 'text-white');
         themeIcon.src = 'Sol.png';
         backgroundImage.classList.add('dark:bg-black', 'dark:bg-opacity-70');
         backgroundImage.style.backgroundImage = "url('FondoMain.jpg')";
@@ -30,14 +27,11 @@ function initializeThemeToggle() {
 
     const setLightMode = () => {
         document.documentElement.classList.remove('dark');
-        document.body.classList.replace('bg-gray-800', 'bg-white');
-        document.body.classList.replace('text-gray-100', 'text-black');
-        document.querySelectorAll('.bg-black').forEach(el => el.classList.replace('bg-black', 'bg-gray-900'));
-        document.querySelectorAll('.bg-black').forEach(el => el.classList.replace('bg-black', 'bg-gray-700'));
-        document.querySelectorAll('th, td').forEach(el => el.classList.replace('text-gray-100', 'text-gray-800'));
+        document.body.classList.replace('bg-black', 'bg-white');
+        document.body.classList.replace('text-white', 'text-black');
         themeIcon.src = 'Luna.png';
         backgroundImage.classList.remove('dark:bg-black', 'dark:bg-opacity-70');
-        backgroundImage.style.backgroundImage = "url('Fondoluz.jpg')";
+        backgroundImage.style.backgroundImage = "url('FondoLuz.jpg')";
     };
 
     themeToggle.addEventListener('click', () => {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +7,26 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-black relative">
-    <div id="background-image" class="absolute inset-0 bg-cover bg-center bg-fixed filter blur-lg opacity-70" style="background-image: url('Fondoluz.jpg'); z-index: -1;"></div>
-    <header id="header" class="bg-white bg-opacity-80 p-4 text-black fixed w-full top-0 z-10 transition duration-300 ease-in-out dark:bg-black dark:bg-opacity-80 dark:text-white">
+<body class="bg-black text-white relative">
+    <div id="background-image" class="absolute inset-0 bg-cover bg-center bg-fixed filter blur-lg opacity-70 dark:bg-black dark:bg-opacity-70" style="background-image: url('FondoMain.jpg'); z-index: -1;"></div>
+    <header id="header" class="bg-black bg-opacity-80 p-4 text-white fixed w-full top-0 z-10 transition duration-300 ease-in-out dark:bg-black dark:bg-opacity-80 dark:text-white">
         <div class="container mx-auto flex justify-between items-center">
             <img src="API.png" alt="Valorant API" class="h-10 animate-bounce">
-            <nav>
-                <ul class="flex space-x-4">
+            <nav class="flex-grow">
+                <ul class="flex justify-center space-x-4">
                     <li><a href="index.html" class="hover:underline">Main</a></li>
                     <li><a href="maps.html" class="hover:underline">Mapas</a></li>
                 </ul>
             </nav>
             <button id="theme-toggle" class="ml-4 p-2 rounded">
-                <img id="theme-icon" src="Luna.png" alt="Toggle Theme" class="w-6 h-6">
+                <img id="theme-icon" src="Sol.png" alt="Toggle Theme" class="w-6 h-6">
             </button>
         </div>
     </header>
     <div class="container mx-auto p-4 mt-20">
         <div id="valorant-logos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0 justify-items-center"></div>
     </div>
-    <footer class="bg-white bg-opacity-80 text-black py-4 mt-8 dark:bg-black dark:bg-opacity-80 dark:text-gray-400">
+    <footer class="bg-black bg-opacity-80 text-gray-400 py-4 mt-8 dark:bg-black dark:bg-opacity-80 dark:text-gray-400">
         <div class="container mx-auto text-center">
             <p>&copy; 2023 Valorant API. All rights reserved.</p>
             <p>Developed by Alexandro Suciu Peici</p>
